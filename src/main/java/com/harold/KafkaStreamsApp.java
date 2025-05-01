@@ -36,7 +36,7 @@ public class KafkaStreamsApp {
 
         KStream<String, String> processedStream = sourceStream.mapValues(value -> {
             System.out.println("Procesando mensaje: " + value);
-            return value.toUpperCase(); // o cualquier lógica que quieras aplicar
+            return value.toUpperCase();
         });
 
         processedStream.to(outputTopic);
